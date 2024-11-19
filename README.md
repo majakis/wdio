@@ -24,7 +24,7 @@ Ovaj vodič pruža korak-po-korak upute za postavljanje radnog okruženja, forka
 Prijavite se u GitHub Desktop aplikaciju pomoću svog postojećeg GitHub računa ili kreirajte novi ako ga još nemate.
 
 ### 2. Forkajte repozitorij  
-1. Otvorite repozitorij u pregledniku: [https://github.com/majaklajic/wdio-excercise](https://github.com/majaklajic/wdio-excercise).  
+1. Otvorite repozitorij u pregledniku: [https://github.com/majakis/wdio](https://github.com/majakis/wdio).  
 2. Kliknite na gumb **Fork** kako biste stvorili vlastitu kopiju repozitorija.
 
 ### 3. Klonirajte forkani repozitorij  
@@ -32,17 +32,17 @@ Prijavite se u GitHub Desktop aplikaciju pomoću svog postojećeg GitHub računa
 2. Kliknite na **URL** i zalijepite URL svog forkanog repozitorija (možete ga pronaći klikom na zeleni gumb **Code** u svom forku).  
 3. U aplikaciji **Finder** (ili File Exploreru na Windowsu) kreirajte novi folder u direktoriju **Documents** s vašim imenom i prezimenom te ga odaberite kao destinaciju za kloniranje.
 
-### 4. Kreirajte novu granu  
-U GitHub Desktop aplikaciji kreirajte novu granu:  
+### 4. Kreirajte novi branch  
+U GitHub Desktop aplikaciji kreirajte novi branch:  
 1. Kliknite **Branch > New Branch**.  
-2. Imenujte svoju granu na prikladan način (npr. *izmjene-readme*).  
+2. Imenujte svoj branch na prikladan način (npr. feature/izmjene-readme).  
 
 ---
 
 ## Uređivanje i spremanje promjena
 
 1. Otvorite klonirani repozitorij u aplikaciji **Visual Studio Code**.  
-2. U datoteci **README.md** napravite bilo kakvu promjenu (npr. dodajte opis, poruku ili nešto smiješno).  
+2. U datoteci **README.md** napravite bilo kakvu promjenu (npr. ispravite nešto u postojećim uputama ili se samo potpišite).  
 3. Spremite svoje promjene.  
 4. U GitHub Desktop aplikaciji, **commitajte** spremljene promjene.
 
