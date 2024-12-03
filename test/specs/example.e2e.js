@@ -1,14 +1,30 @@
 import { browser, expect, $ } from '@wdio/globals';
 
 describe('Ultimate QA test web', async () => {
-  it('should display proper heading message', async () => {
+  /**
+   * TEST 1: Otvaranje stranice i provjera naslova
+   * Koraci:
+   * 1. Otvori URL 'https://ultimateqa.com/fake-landing-page'.
+   * 2. Kreiraj selektor za naslov koristeći h1 element.
+   * 3. Provjeri sadrži li odabrani element tekst "Learn to Code Websites, Apps & Games" - https://webdriver.io/docs/api/expect-webdriverio/#tohavetext
+   */
+  it('trebao bi prikazati točan naslov', async () => {
     await browser.url('https://ultimateqa.com/fake-landing-page');
 
     const heading = await $('h1');
+
     await expect(heading).toHaveText('Learn to Code Websites, Apps & Games');
   });
 
-  it('should click on the button using ID selector', async () => {
+  /**
+   * TEST 2: Klik na gumb pomoću ID selektora
+   * Koraci:
+   * 1. Otvori URL 'https://ultimateqa.com/simple-html-elements-for-automation/'.
+   * 2. Kreiraj selektor za gumb pomoću ID selektora - https://webdriver.io/docs/selectors/#id-attribute
+   * 3. Klikni na gumb - https://webdriver.io/docs/api/element/click
+   * 4. Provjeri je li prikazan tekst 'Button success' - https://webdriver.io/docs/api/expect-webdriverio/#tohavetext
+   */
+  it('trebao bi kliknuti na gumb koristeći ID selektor', async () => {
     await browser.url(
       'https://ultimateqa.com/simple-html-elements-for-automation/'
     );
@@ -20,11 +36,18 @@ describe('Ultimate QA test web', async () => {
     await expect(successMessage).toHaveText('Button success');
   });
 
-  it('should click on the button using class selector', async () => {
+  /**
+   * TEST 3: Klik na gumb pomoću class name selektora
+   * Koraci:
+   * 1. Otvori URL 'https://ultimateqa.com/simple-html-elements-for-automation/'.
+   * 2. Kreiraj selektor za gumb pomoću klase - https://webdriver.io/docs/selectors/#class-name
+   * 3. Klikni na gumb - https://webdriver.io/docs/api/element/click
+   * 4. Provjeri je li prikazan tekst 'Button success' - - https://webdriver.io/docs/api/expect-webdriverio/#tohavetext
+   */
+  it('trebao bi kliknuti na gumb koristeći klasu kao selektor', async () => {
     await browser.url(
       'https://ultimateqa.com/simple-html-elements-for-automation/'
     );
-
     const button = await $('.buttonClass');
     await button.click();
 
@@ -32,7 +55,15 @@ describe('Ultimate QA test web', async () => {
     await expect(successMessage).toHaveText('Button success');
   });
 
-  it('should click on the button using text as a selector', async () => {
+  /**
+   * TEST 4: Klik na gumb pomoću elementa s određenim tekstom
+   * Koraci:
+   * 1. Otvori URL 'https://ultimateqa.com/simple-html-elements-for-automation/'.
+   * 2. Odaberi gumb pomoću teksta linka - https://webdriver.io/docs/selectors/#element-with-certain-text
+   * 3. Klikni na gumb - https://webdriver.io/docs/api/element/click
+   * 4. Provjeri je li prikazan tekst 'Link success'.
+   */
+  it('trebao bi kliknuti na gumb koristeći element s određenim tekstom kao selektor', async () => {
     await browser.url(
       'https://ultimateqa.com/simple-html-elements-for-automation/'
     );
@@ -44,7 +75,15 @@ describe('Ultimate QA test web', async () => {
     await expect(successMessage).toHaveText('Link success');
   });
 
-  it('should click on the button using attribute as selector', async () => {
+  /**
+   * TEST 5: Klik na gumb pomoću name atribute selektora
+   * Koraci:
+   * 1. Otvori URL 'https://ultimateqa.com/simple-html-elements-for-automation/'.
+   * 2. Kreiraj selektor za gumb pomoću name atributa - https://webdriver.io/docs/selectors/#name-attribute
+   * 3. Klikni na gumb - https://webdriver.io/docs/api/element/click
+   * 4. Provjeri je li prikazan tekst 'Button success' - https://webdriver.io/docs/api/expect-webdriverio/#tohavetext
+   */
+  it('trebao bi kliknuti na gumb koristeći name atribut kao selektor', async () => {
     await browser.url(
       'https://ultimateqa.com/simple-html-elements-for-automation/'
     );
@@ -56,24 +95,31 @@ describe('Ultimate QA test web', async () => {
     await expect(successMessage).toHaveText('Button success');
   });
 
-  it('should fill in the form, submit it and display success message', async () => {
-    //Opens form page
+  /**
+   * TEST 6: Popunjavanje i slanje forme
+   * Koraci:
+   * 1. Otvori URL 'https://ultimateqa.com/filling-out-forms/'.
+   * 2. Kreiraj selektor za name input field pomoću ID-a - https://webdriver.io/docs/selectors/#id-attribute
+   * 3. Unesi tekst u name input field - https://webdriver.io/docs/api/element/setValue/
+   * 4. Kreiraj selektor za message input field pomoću ID-a - https://webdriver.io/docs/selectors/#id-attribute
+   * 5. Unesi tekst u name input field - https://webdriver.io/docs/api/element/setValue/
+   * 6. Kreiraj selektor za submit gumb pomoću teksta - https://webdriver.io/docs/selectors/#element-with-certain-text
+   * 7. Klikni na gumb za submitanje forme - https://webdriver.io/docs/api/element/click
+   * 8. Provjeri je li prikazana poruka "Thanks for contacting us" - https://webdriver.io/docs/api/expect-webdriverio/#tohavetext
+   */
+  it('trebao bi popuniti formu, poslati je i prikazati poruku o uspjehu', async () => {
     await browser.url('https://ultimateqa.com/filling-out-forms/');
 
-    // Defines name input selector
     const nameInput = await $('#et_pb_contact_name_0');
-    // Populates
-    await nameInput.addValue('Maja');
+    await nameInput.setValue('Maja');
 
     const messageInput = await $('#et_pb_contact_message_0');
-    await messageInput.addValue('Klajic');
+    await messageInput.setValue('This is a message');
 
     const submitButton = await $('button=Submit');
     await submitButton.click();
 
     const successMessage = await $('#et_pb_contact_form_0');
-
     await expect(successMessage).toHaveText('Thanks for contacting us');
-    await browser.pause(3000);
   });
 });
