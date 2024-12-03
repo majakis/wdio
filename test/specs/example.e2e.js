@@ -9,11 +9,8 @@ describe('Ultimate QA test web', async () => {
    * 3. Provjeri sadrži li odabrani element tekst "Learn to Code Websites, Apps & Games" - https://webdriver.io/docs/api/expect-webdriverio/#tohavetext
    */
   it('trebao bi prikazati točan naslov', async () => {
-    await browser.url('https://ultimateqa.com/fake-landing-page');
+    
 
-    const heading = await $('h1');
-
-    await expect(heading).toHaveText('Learn to Code Websites, Apps & Games');
   });
 
   /**
@@ -25,15 +22,8 @@ describe('Ultimate QA test web', async () => {
    * 4. Provjeri je li prikazan tekst 'Button success' - https://webdriver.io/docs/api/expect-webdriverio/#tohavetext
    */
   it('trebao bi kliknuti na gumb koristeći ID selektor', async () => {
-    await browser.url(
-      'https://ultimateqa.com/simple-html-elements-for-automation/'
-    );
 
-    const button = await $('#idExample');
-    await button.click();
 
-    const successMessage = await $('h1');
-    await expect(successMessage).toHaveText('Button success');
   });
 
   /**
@@ -45,14 +35,8 @@ describe('Ultimate QA test web', async () => {
    * 4. Provjeri je li prikazan tekst 'Button success' - - https://webdriver.io/docs/api/expect-webdriverio/#tohavetext
    */
   it('trebao bi kliknuti na gumb koristeći klasu kao selektor', async () => {
-    await browser.url(
-      'https://ultimateqa.com/simple-html-elements-for-automation/'
-    );
-    const button = await $('.buttonClass');
-    await button.click();
 
-    const successMessage = await $('h1');
-    await expect(successMessage).toHaveText('Button success');
+
   });
 
   /**
@@ -64,15 +48,8 @@ describe('Ultimate QA test web', async () => {
    * 4. Provjeri je li prikazan tekst 'Link success'.
    */
   it('trebao bi kliknuti na gumb koristeći element s određenim tekstom kao selektor', async () => {
-    await browser.url(
-      'https://ultimateqa.com/simple-html-elements-for-automation/'
-    );
 
-    const button = await $('a=Click me using this link text!');
-    await button.click();
 
-    const successMessage = await $('h1');
-    await expect(successMessage).toHaveText('Link success');
   });
 
   /**
@@ -84,15 +61,8 @@ describe('Ultimate QA test web', async () => {
    * 4. Provjeri je li prikazan tekst 'Button success' - https://webdriver.io/docs/api/expect-webdriverio/#tohavetext
    */
   it('trebao bi kliknuti na gumb koristeći name atribut kao selektor', async () => {
-    await browser.url(
-      'https://ultimateqa.com/simple-html-elements-for-automation/'
-    );
 
-    const button = await $('[name="button1"]');
-    await button.click();
 
-    const successMessage = await $('h1');
-    await expect(successMessage).toHaveText('Button success');
   });
 
   /**
@@ -108,18 +78,7 @@ describe('Ultimate QA test web', async () => {
    * 8. Provjeri je li prikazana poruka "Thanks for contacting us" - https://webdriver.io/docs/api/expect-webdriverio/#tohavetext
    */
   it('trebao bi popuniti formu, poslati je i prikazati poruku o uspjehu', async () => {
-    await browser.url('https://ultimateqa.com/filling-out-forms/');
 
-    const nameInput = await $('#et_pb_contact_name_0');
-    await nameInput.setValue('Maja');
 
-    const messageInput = await $('#et_pb_contact_message_0');
-    await messageInput.setValue('This is a message');
-
-    const submitButton = await $('button=Submit');
-    await submitButton.click();
-
-    const successMessage = await $('#et_pb_contact_form_0');
-    await expect(successMessage).toHaveText('Thanks for contacting us');
   });
 });
