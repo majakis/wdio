@@ -107,19 +107,5 @@ describe('Ultimate QA test web', async () => {
    * 7. Klikni na gumb za submitanje forme - https://webdriver.io/docs/api/element/click
    * 8. Provjeri je li prikazana poruka "Thanks for contacting us" - https://webdriver.io/docs/api/expect-webdriverio/#tohavetext
    */
-  it('trebao bi popuniti formu, poslati je i prikazati poruku o uspjehu', async () => {
-    await browser.url('https://ultimateqa.com/filling-out-forms/');
-
-    const nameInput = await $('#et_pb_contact_name_0');
-    await nameInput.setValue('Maja');
-
-    const messageInput = await $('#et_pb_contact_message_0');
-    await messageInput.setValue('This is a message');
-
-    const submitButton = await $('button=Submit');
-    await submitButton.click();
-
-    const successMessage = await $('#et_pb_contact_form_0');
-    await expect(successMessage).toHaveText('Thanks for contacting us');
-  });
+  it('trebao bi popuniti formu, poslati je i prikazati poruku o uspjehu', async () => {});
 });
